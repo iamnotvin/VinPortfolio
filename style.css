@@ -1252,67 +1252,6 @@ section {
     }
 }
 
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    .nav-container {
-        padding: 0 1rem;
-    }
-    
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-    
-    .image-placeholder {
-        width: 200px;
-        height: 200px;
-        font-size: 0.9rem;
-    }
-    
-    .about-image .image-placeholder {
-        width: 180px;
-        height: 200px;
-    }
-    
-    .experience-item,
-    .contact-form {
-        padding: 1.5rem;
-    }
-    
-    .tools-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    
-    .portfolio-placeholder {
-        height: 200px;
-    }
-    
-    .design-placeholder {
-        height: 250px;
-        font-size: 1rem;
-    }
-    
-    .certifications-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Print Styles */
 @media print {
     .navbar,
