@@ -171,8 +171,7 @@ p {
 }
 
 /* Hero Section */
-.hero-section {
-    background: var(--primary-color);
+    background: url("images/hero-bg-artistic.png") no-repeat center center/cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -325,8 +324,8 @@ p {
 
 /* Image Placeholders */
 .image-placeholder {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -698,18 +697,7 @@ section {
     display: block;
 }
 
-.design-placeholder {
-    width: 100%;
-    height: 400px;
-    background: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-light);
-    font-size: 1.5rem;
-    font-weight: 600;
-    border: 3px dashed var(--secondary-color);
-}
+
 
 .carousel-btn {
     position: absolute;
@@ -1370,4 +1358,52 @@ section {
         --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.5);
     }
 }
+
+
+
+/* Contact Section Refinements */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.contact-item {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    transition: var(--transition-medium);
+    border: 1px solid var(--border-color);
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--secondary-color);
+}
+
+.contact-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 
