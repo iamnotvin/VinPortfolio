@@ -692,11 +692,42 @@ section {
 .carousel-item {
     display: none;
     width: 100%;
+    position: relative;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    height: 400px; /* Set fixed height or use aspect-ratio */
 }
-
 .carousel-item.active {
     display: block;
+    opacity: 1;
 }
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Shows whole image without cropping */
+    object-position: center;
+    border-radius: var(--border-radius-large);
+}
+/* Improved transition animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.carousel-item.active {
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+}
+@media (max-width: 576px) {
+    .carousel-item {
+        height: 250px;
+    }
+}
+
 
 .design-placeholder {
     width: 100%;
