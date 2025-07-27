@@ -1186,37 +1186,6 @@ section {
         padding: 4rem 0;
     }
     
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .carousel-btn.prev {
-        left: 10px;
-    }
-    
-    .carousel-btn.next {
-        right: 10px;
-    }
-    
-    .design-placeholder {
-        height: 300px;
-        font-size: 1.2rem;
-    }
-    
-    .portfolio-placeholder {
-        height: 250px;
-    }
-    
-    .social-links {
-        gap: 0.5rem;
-    }
-    
-    .social-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
 }
 
 /* Print Styles */
