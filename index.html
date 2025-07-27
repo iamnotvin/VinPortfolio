@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Digital Marketing & Web Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Creative Digital Solutions</h1>
+                <p class="hero-subtitle">Transforming ideas into powerful digital experiences through marketing, design, and development</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate about creating meaningful digital experiences</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        I'm a versatile digital professional with expertise spanning multiple disciplines. Currently working as a Digital Marketing and Email Associate at SGS, I bring a unique blend of technical skills and creative vision to every project.
+                    </p>
+                    <div class="experience-grid">
+                        <div class="experience-item">
+                            <h3>Digital Marketing Professional</h3>
+                            <p>Email Associate at SGS, specializing in campaign management and digital strategy</p>
+                        </div>
+                        <div class="experience-item">
+                            <h3>Freelance Developer</h3>
+                            <p>Creating modern, responsive websites and web applications for diverse clients</p>
+                        </div>
+                        <div class="experience-item">
+                            <h3>Graphic Designer</h3>
+                            <p>Crafting visual identities and design solutions that communicate effectively</p>
+                        </div>
+                        <div class="experience-item">
+                            <h3>Technical Support</h3>
+                            <p>Helpdesk technician with strong problem-solving and communication skills</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">Comprehensive digital solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📧</div>
+                    <h3>Email Marketing</h3>
+                    <p>Strategic email campaigns that engage audiences and drive conversions</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Comprehensive digital strategies to boost your online presence</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Modern, responsive websites built with the latest technologies</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Visual design solutions that communicate your brand effectively</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Technical Support</h3>
+                    <p>Reliable technical assistance and problem-solving expertise</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Analytics & Optimization</h3>
+                    <p>Data-driven insights to improve performance and ROI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">A showcase of my recent work and achievements</p>
+            </div>
+            
+            <!-- Interactive Gallery 1 -->
+            <div class="project-category">
+                <h3 class="category-title">Web Development Portfolio</h3>
+                <div class="gallery" id="gallery-1">
+                    <div class="gallery-item" data-category="web">
+                        <div class="gallery-image">
+                            <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=E-commerce+Site" alt="E-commerce Website">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>E-commerce Platform</h4>
+                            <p>Modern online store with responsive design</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="web">
+                        <div class="gallery-image">
+                            <img src="https://via.placeholder.com/400x300/F4E04D/000000?text=Corporate+Website" alt="Corporate Website">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>Corporate Website</h4>
+                            <p>Professional business website with CMS</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="web">
+                        <div class="gallery-image">
+                            <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Portfolio+Site" alt="Portfolio Website">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>Creative Portfolio</h4>
+                            <p>Artist portfolio with interactive galleries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Gallery 2 -->
+            <div class="project-category">
+                <h3 class="category-title">Design Projects</h3>
+                <div class="gallery" id="gallery-2">
+                    <div class="gallery-item" data-category="design">
+                        <div class="gallery-image">
+                            <img src="https://via.placeholder.com/400x300/F4E04D/000000?text=Brand+Identity" alt="Brand Identity">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>Brand Identity Design</h4>
+                            <p>Complete visual identity for startup</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="design">
+                        <div class="gallery-image">
+                            <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Marketing+Materials" alt="Marketing Materials">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>Marketing Materials</h4>
+                            <p>Print and digital marketing collateral</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="design">
+                        <div class="gallery-image">
+                            <img src="https://via.placeholder.com/400x300/F4E04D/000000?text=UI+Design" alt="UI Design">
+                        </div>
+                        <div class="gallery-content">
+                            <h4>UI/UX Design</h4>
+                            <p>Mobile app interface design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Project -->
+            <div class="project-category">
+                <h3 class="category-title">Video Content</h3>
+                <div class="video-gallery">
+                    <div class="video-item">
+                        <div class="video-placeholder">
+                            <div class="play-button">▶</div>
+                            <p>Brand Promotional Video</p>
+                        </div>
+                        <div class="video-content">
+                            <h4>Company Promotional Video</h4>
+                            <p>Creative video content for brand awareness campaign</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's discuss your next project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>your.email@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Your City, Your Country</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>Availability</h4>
+                            <p>Open for freelance projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" class="social-link" aria-label="GitHub">
+                    <span>GitHub</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Behance">
+                    <span>Behance</span>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter">
+                    <span>Twitter</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Portfolio. All rights reserved.</p>
+                <p>Designed and developed with passion</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Gallery -->
+    <div id="gallery-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <div id="modal-info">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
