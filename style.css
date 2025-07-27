@@ -695,7 +695,7 @@ section {
     position: relative;
     transition: opacity 0.5s ease-in-out;
     opacity: 0;
-    height: 400px; /* Set fixed height or use aspect-ratio */
+    height: 600px; /* Set fixed height or use aspect-ratio */
 }
 .carousel-item.active {
     display: block;
