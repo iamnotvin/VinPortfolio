@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initializeNavigation();
     initializeScrollEffects();
-    initializeGalleries();
     initializeContactForm();
     initializeSkillsAnimation();
-    initializeToolsInteraction();
+    initializeImageZoom();
+    initializeCarousel();
+    initPortfolioCarousel();
+    initPortfolioZoom();
     initializeScrollIndicator();
 });
 
@@ -42,7 +44,7 @@ function initializeNavigation() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // Account for fixed navbar
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -55,18 +57,16 @@ function initializeNavigation() {
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
         }
     });
 
     // Active navigation highlighting
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 100;
+        const scrollPos = window.scrollY + 120;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -100,7 +100,7 @@ function initializeScrollEffects() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.experience-item, .tool-card, .gallery-item, .contact-item, .cert-item');
+    const animatedElements = document.querySelectorAll('.experience-item, .tool-item, .project-category, .contact-item, .cert-item, .portfolio-item');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -112,8 +112,8 @@ function initializeScrollEffects() {
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const heroSection = document.querySelector('.hero-section');
-        if (heroSection) {
-            const rate = scrolled * -0.5;
+        if (heroSection && scrolled < window.innerHeight) {
+            const rate = scrolled * -0.3;
             heroSection.style.transform = `translateY(${rate}px)`;
         }
     });
@@ -132,7 +132,7 @@ function initializeSkillsAnimation() {
                 skillsAnimated = true;
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     if (skillsSection) {
         skillsObserver.observe(skillsSection);
@@ -148,112 +148,47 @@ function initializeSkillsAnimation() {
     }
 }
 
-// Tools interaction
-function initializeToolsInteraction() {
-    const toolCards = document.querySelectorAll('.tool-card');
-    
-    toolCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-15px) scale(1.02)';
-            this.style.transition = 'all 0.3s ease';
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-
-        // Add click interaction for mobile
-        card.addEventListener('click', function() {
-            const toolName = this.querySelector('h3').textContent;
-            showToolInfo(toolName);
-        });
-    });
-}
-
-function showToolInfo(toolName) {
-    // Create a simple tooltip or modal for tool information
-    const existingTooltip = document.querySelector('.tool-tooltip');
-    if (existingTooltip) {
-        existingTooltip.remove();
-    }
-
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tool-tooltip';
-    tooltip.innerHTML = `
-        <div class="tooltip-content">
-            <h4>${toolName}</h4>
-            <p>Click to learn more about this tool and my experience with it.</p>
-            <button onclick="this.parentElement.parentElement.remove()">Close</button>
-        </div>
-    `;
-    
-    tooltip.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        z-index: 1000;
-        max-width: 300px;
-    `;
-
-    document.body.appendChild(tooltip);
-}
-
-// Gallery functionality
-function initializeGalleries() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const modal = document.getElementById('gallery-modal');
+// Image zoom functionality
+function initializeImageZoom() {
+    const zoomableImages = document.querySelectorAll('.zoomable-image');
+    const modal = document.getElementById('image-modal');
     const modalImage = document.getElementById('modal-image');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const closeModal = document.querySelector('.close');
+    const closeModal = document.querySelector('.close-modal');
 
-    // Gallery item click handlers
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const img = this.querySelector('img');
-            const title = this.querySelector('h4').textContent;
-            const description = this.querySelector('p').textContent;
-
-            if (modal && modalImage && modalTitle && modalDescription) {
-                modalImage.src = img.src;
-                modalImage.alt = img.alt;
-                modalTitle.textContent = title;
-                modalDescription.textContent = description;
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            }
+    zoomableImages.forEach(image => {
+        image.addEventListener('click', function() {
+            // For now, show a placeholder since we don't have actual images
+            // In a real implementation, you would set the src to the actual image
+            showImageModal('placeholder-image.jpg', 'Profile Image');
         });
 
-        // Add hover effects
-        item.addEventListener('mouseenter', function() {
-            const img = this.querySelector('img');
-            if (img) {
-                img.style.transform = 'scale(1.1)';
-            }
+        // Add hover effect
+        image.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.transition = 'transform 0.3s ease';
         });
 
-        item.addEventListener('mouseleave', function() {
-            const img = this.querySelector('img');
-            if (img) {
-                img.style.transform = 'scale(1)';
-            }
+        image.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
         });
     });
+
+    function showImageModal(imageSrc, imageAlt) {
+        if (modal && modalImage) {
+            // For demonstration, we'll show a message instead of an actual image
+            showNotification('Image zoom functionality ready! Add your actual images to enable full zoom feature.', 'info');
+        }
+    }
 
     // Modal close handlers
     if (closeModal) {
-        closeModal.addEventListener('click', closeGalleryModal);
+        closeModal.addEventListener('click', closeImageModal);
     }
 
     if (modal) {
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                closeGalleryModal();
+                closeImageModal();
             }
         });
     }
@@ -261,28 +196,145 @@ function initializeGalleries() {
     // Keyboard navigation for modal
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal && modal.style.display === 'block') {
-            closeGalleryModal();
+            closeImageModal();
         }
     });
 
-    function closeGalleryModal() {
+    function closeImageModal() {
         if (modal) {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
     }
+}
 
-    // Video placeholder interaction
-    const videoPlaceholders = document.querySelectorAll('.video-placeholder');
-    videoPlaceholders.forEach(placeholder => {
-        placeholder.addEventListener('click', function() {
-            showVideoModal();
+// Carousel functionality
+function initializeCarousel() {
+    const carousel = document.getElementById('design-carousel');
+    const prevBtn = document.getElementById('design-prev');
+    const nextBtn = document.getElementById('design-next');
+    const indicators = document.getElementById('design-indicators');
+    
+    if (!carousel || !prevBtn || !nextBtn || !indicators) return;
+
+    const items = carousel.querySelectorAll('.carousel-item');
+    const indicatorElements = indicators.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    // Initialize carousel
+    showSlide(currentSlide);
+    startAutoSlide();
+
+    // Previous button
+    prevBtn.addEventListener('click', function() {
+        stopAutoSlide();
+        currentSlide = (currentSlide - 1 + items.length) % items.length;
+        showSlide(currentSlide);
+        startAutoSlide();
+    });
+
+    // Next button
+    nextBtn.addEventListener('click', function() {
+        stopAutoSlide();
+        currentSlide = (currentSlide + 1) % items.length;
+        showSlide(currentSlide);
+        startAutoSlide();
+    });
+
+    // Indicator clicks
+    indicatorElements.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+            stopAutoSlide();
+            currentSlide = index;
+            showSlide(currentSlide);
+            startAutoSlide();
         });
     });
 
-    function showVideoModal() {
-        alert('Video content would be displayed here. This is a placeholder for your actual video content.');
+    // Pause auto-slide on hover
+    carousel.addEventListener('mouseenter', stopAutoSlide);
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let endX = 0;
+
+    carousel.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            stopAutoSlide();
+            if (diff > 0) {
+                // Swipe left - next slide
+                currentSlide = (currentSlide + 1) % items.length;
+            } else {
+                // Swipe right - previous slide
+                currentSlide = (currentSlide - 1 + items.length) % items.length;
+            }
+            showSlide(currentSlide);
+            startAutoSlide();
+        }
     }
+
+    function showSlide(index) {
+        // Hide all items
+        items.forEach(item => {
+            item.classList.remove('active');
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(100px)';
+        });
+
+        // Remove active class from all indicators
+        indicatorElements.forEach(indicator => {
+            indicator.classList.remove('active');
+        });
+
+        // Show current item with animation
+        setTimeout(() => {
+            items[index].classList.add('active');
+            items[index].style.opacity = '1';
+            items[index].style.transform = 'translateX(0)';
+            items[index].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        }, 100);
+
+        // Activate current indicator
+        if (indicatorElements[index]) {
+            indicatorElements[index].classList.add('active');
+        }
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % items.length;
+            showSlide(currentSlide);
+        }, 4000); // Change slide every 4 seconds
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+            nextBtn.click();
+        }
+    });
 }
 
 // Contact form functionality
@@ -363,7 +415,7 @@ function showFieldError(field, message) {
 }
 
 function clearFieldError(field) {
-    field.style.borderColor = '#e1e5e9';
+    field.style.borderColor = '#E1E5E9';
     const errorElement = field.parentNode.querySelector('.field-error');
     if (errorElement) {
         errorElement.remove();
@@ -386,13 +438,15 @@ function showNotification(message, type = 'info') {
     notification.textContent = message;
     
     // Styling
-    const bgColor = type === 'success' ? '#1B4D3E' : type === 'error' ? '#e74c3c' : '#3498db';
+    const bgColor = type === 'success' ? '#1B4D3E' : type === 'error' ? '#e74c3c' : '#F1C40F';
+    const textColor = type === 'info' ? '#2C3E50' : '#FFFFFF';
+    
     notification.style.cssText = `
         position: fixed;
-        top: 20px;
+        top: 100px;
         right: 20px;
         background: ${bgColor};
-        color: white;
+        color: ${textColor};
         padding: 15px 20px;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -400,9 +454,10 @@ function showNotification(message, type = 'info') {
         font-weight: 500;
         max-width: 300px;
         animation: slideInRight 0.3s ease;
+        border-left: 4px solid ${type === 'info' ? '#FFD700' : bgColor};
     `;
     
-    // Add animation keyframes
+    // Add animation keyframes if not already present
     if (!document.querySelector('#notification-styles')) {
         const style = document.createElement('style');
         style.id = 'notification-styles';
@@ -446,7 +501,7 @@ function initializeScrollIndicator() {
         
         // Hide scroll indicator after scrolling
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 200) {
                 scrollIndicator.style.opacity = '0';
                 scrollIndicator.style.pointerEvents = 'none';
             } else {
@@ -454,8 +509,91 @@ function initializeScrollIndicator() {
                 scrollIndicator.style.pointerEvents = 'auto';
             }
         });
+   // Portfolio Carousel Functionality
+function initPortfolioCarousel() {
+    const carousel = document.getElementById('portfolio-carousel');
+    const items = carousel.querySelectorAll('.portfolio-carousel-item');
+    const prevBtn = document.getElementById('portfolio-prev');
+    const nextBtn = document.getElementById('portfolio-next');
+    const indicators = document.querySelectorAll('.portfolio-indicator');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        // Hide all items
+        items.forEach(item => item.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Show current item
+        items[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
     }
+
+    function nextSlide() {
+        const next = (currentSlide + 1) % items.length;
+        showSlide(next);
+    }
+
+    function prevSlide() {
+        const prev = (currentSlide - 1 + items.length) % items.length;
+        showSlide(prev);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-slide functionality
+    let autoSlideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-slide on hover
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
 }
+
+// Portfolio Image Zoom Functionality
+function initPortfolioZoom() {
+    const zoomableImages = document.querySelectorAll('.zoomable-portfolio');
+    
+    zoomableImages.forEach(image => {
+        image.addEventListener('click', () => {
+            showNotification('Portfolio zoom functionality ready! Add your actual images to enable full zoom feature.');
+        });
+    });
+}howNotification(`${title} - Portfolio item clicked! Add your actual portfolio content here.`, 'info');
+        });
+
+        // Add hover effects
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+}
+
+// Initialize portfolio gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializePortfolioGallery);
 
 // Utility functions
 function debounce(func, wait) {
@@ -477,7 +615,7 @@ const debouncedScrollHandler = debounce(function() {
 
 window.addEventListener('scroll', debouncedScrollHandler);
 
-// Lazy loading for images
+// Lazy loading for images (when actual images are added)
 function initializeLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     
@@ -495,7 +633,7 @@ function initializeLazyLoading() {
     images.forEach(img => imageObserver.observe(img));
 }
 
-// Initialize lazy loading if needed
+// Initialize lazy loading
 document.addEventListener('DOMContentLoaded', initializeLazyLoading);
 
 // Accessibility improvements
@@ -545,4 +683,73 @@ if ('serviceWorker' in navigator) {
         //     .catch(error => console.log('SW registration failed'));
     });
 }
+
+// Add smooth reveal animations for sections
+function initializeSectionAnimations() {
+    const sections = document.querySelectorAll('section');
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        sectionObserver.observe(section);
+    });
+}
+
+// Initialize section animations
+document.addEventListener('DOMContentLoaded', initializeSectionAnimations);
+
+// Add interactive hover effects for tool items
+function initializeToolInteractions() {
+    const toolItems = document.querySelectorAll('.tool-item');
+    
+    toolItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+// Initialize tool interactions
+document.addEventListener('DOMContentLoaded', initializeToolInteractions);
+
+// Add click-to-copy functionality for contact information
+function initializeContactCopy() {
+    const contactDetails = document.querySelectorAll('.contact-details p');
+    
+    contactDetails.forEach(detail => {
+        detail.style.cursor = 'pointer';
+        detail.title = 'Click to copy';
+        
+        detail.addEventListener('click', function() {
+            const text = this.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification(`Copied: ${text}`, 'success');
+            }).catch(() => {
+                showNotification('Failed to copy to clipboard', 'error');
+            });
+        });
+    });
+}
+
+// Initialize contact copy functionality
+document.addEventListener('DOMContentLoaded', initializeContactCopy);
 

@@ -1,23 +1,28 @@
 # Vincent Michael A. Reconquista - Portfolio Website
 
-A modern, responsive portfolio website showcasing Vincent's expertise in digital operations, cybersecurity, and IT support.
+A modern, responsive portfolio website showcasing Vincent's expertise in digital operations, cybersecurity, and IT support with a minimal yet playful and professional aesthetic.
 
 ## 🌟 Features
 
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Modern UI/UX**: Clean, minimal design with forest green and yellow accent colors
-- **Interactive Elements**: Animated skill bars, hover effects, and smooth scrolling
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices with enhanced padding and spacing
+- **Modern UI/UX**: Clean, minimal design with forest green (#1B4D3E) and yellow accent colors (#F1C40F, #FFD700)
+- **Interactive Elements**: Animated skill bars, image zoom functionality, carousel, and smooth scrolling
 - **Contact Form**: Functional contact form with validation and success notifications
-- **Professional Sections**: About, Skills, Tools, Projects, and Contact sections
+- **Professional Sections**: About, Skills, Tools, Projects, Design Gallery, Portfolio Gallery, and Contact sections
 - **Fast Loading**: Optimized images and efficient code structure
+- **Image Zoom**: Interactive zoom functionality for personal photos
+- **Carousel Gallery**: Smooth carousel for graphic design portfolio
+- **Portfolio Grid**: 8-item portfolio gallery in portrait layout
 
 ## 🎨 Design Elements
 
-- **Color Scheme**: Black, white, forest green (#1B4D3E), and soft yellow (#F1C40F)
+- **Color Scheme**: Black, white, forest green (#1B4D3E), and yellow accents (#F1C40F, #FFD700)
 - **Typography**: Inter font family for clean, modern readability
 - **Hero Section**: Solid forest green background with professional introduction
-- **Logo Integration**: Custom VN logo in navigation header
-- **Animations**: Smooth transitions and scroll-triggered animations
+- **Navigation**: White background with enhanced padding to complement the VN logo
+- **Logo Integration**: Custom VN logo in navigation header with name beside it
+- **Animations**: Smooth transitions, scroll-triggered animations, and hover effects
+- **Minimal Design**: Clean, uncluttered layout with playful yellow accents
 
 ## 📁 File Structure
 
@@ -93,51 +98,97 @@ Enhance `script.js` to add:
 - Analytics tracking
 - Performance optimizations
 
+# Vincent Michael A. Reconquista - Portfolio Website
+
+A modern, responsive portfolio website showcasing Vincent's expertise in digital operations, cybersecurity, and IT support with a minimal yet playful and professional aesthetic.
+
+## 🌟 Features
+
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices with enhanced padding and spacing
+- **Modern UI/UX**: Clean, minimal design with forest green (#1B4D3E) and balanced yellow accent colors (#F1C40F, #E6B800)
+- **Interactive Elements**: Animated skill bars, image zoom functionality, large portfolio carousel, and smooth scrolling
+- **Contact Form**: Functional contact form with validation and success notifications
+- **Professional Sections**: About, Skills, Tools, Projects, Design Gallery, Portfolio Gallery, and Contact sections
+- **Fast Loading**: Optimized images and efficient code structure
+- **Image Zoom**: Interactive zoom functionality for personal photos
+- **Large Portfolio Carousel**: Interactive carousel with zoom functionality for portfolio projects
+- **CV Download**: Direct download button for resume/CV
+- **LinkedIn Integration**: Direct link to LinkedIn profile
+
+## 🎨 Design Elements
+
+- **Color Scheme**: Black, white, forest green (#1B4D3E), and balanced yellow accents (#F1C40F, #E6B800)
+- **Typography**: Inter font family for clean, modern readability
+- **Hero Section**: Solid forest green background with professional introduction and action buttons
+- **Navigation**: White background with enhanced padding to complement the VN logo
+- **Logo Integration**: Custom VN logo in navigation header with name beside it
+- **Animations**: Smooth transitions, scroll-triggered animations, and hover effects
+- **Minimal Design**: Clean, uncluttered layout with balanced yellow accents
+- **Drop Shadows**: Elegant drop shadows on images instead of borders
+
 ## 🎯 Key Sections
 
 ### 1. Hero Section
-- Professional introduction
-- Call-to-action buttons
-- Placeholder for personal photo
+- Professional introduction with forest green background
+- Four call-to-action buttons: View My Work, Get In Touch, Download CV, LinkedIn
+- Zoomable personal photo placeholder (circular)
 
 ### 2. About Me
-- Detailed professional background
-- Experience timeline
-- Education and certifications
-- Professional photo placeholder
+- Minimized professional background from resume
+- Experience timeline with SGS and JP Morgan Chase
+- SGS departmental engagement committee role (2024-2025)
+- Education with Baybayin mobile app thesis mention
+- Professional certifications (HubSpot, Aviatrix)
+- Zoomable professional photo placeholder (rectangular)
 
 ### 3. Technical Skills
-- Animated progress bars
+- Animated progress bars with forest green to yellow gradient
 - Categorized skill sets:
-  - Web Technologies
-  - Digital Marketing & Analytics
-  - Cybersecurity & QA
-  - Business & Automation
+  - Web Technologies (HTML/CSS/JavaScript, Java, CMS)
+  - Digital Marketing & Analytics (Google Analytics, A/B Testing, Email Platforms)
+  - Cybersecurity & QA (Security Principles, QA Testing, Data Privacy)
+  - Business & Automation (CRM Tools, Automation, Analytics)
 
-### 4. Tools & Platforms
-- Interactive tool cards
+### 4. Tools & Platforms (Minimal Design)
+- Simple, non-clickable tool cards
+- No images, text-only minimal design
 - Professional platforms:
-  - Sitecore
-  - Lionbridge
-  - Canva
-  - Figma
-  - Adobe Creative Suite
-  - LanguageWire
-  - Google Analytics
-  - Security Tools
-  - Email Platforms
+  - Sitecore, Lionbridge, Canva, Figma
+  - Adobe Creative Suite, LanguageWire
+  - Google Analytics, Security Tools, Email Platforms
 
-### 5. Projects
-- Interactive galleries
-- Project showcases
-- Video content section
-- Professional achievements
+### 5. Projects & Achievements (Minimal Design)
+- Simple project category cards
+- No images, minimal text-based layout
+- Categories:
+  - Digital Operations & Analytics
+  - Technical Solutions & QA
+  - Professional Development
+  - Baybayin Mobile App (thesis project)
 
-### 6. Contact
-- Functional contact form
-- Professional contact information
-- Social media links
-- Availability status
+### 6. Design Gallery
+- Interactive carousel with navigation buttons
+- 4 design project placeholders
+- Auto-slide functionality with manual controls
+- Smooth transitions and indicators
+
+### 7. Portfolio Gallery (Large Interactive Carousel)
+- Large, interactive carousel with 8 portfolio projects
+- Zoom functionality on portfolio images
+- Project information overlay on hover
+- Navigation buttons and indicators
+- Auto-slide with pause on hover
+- Keyboard navigation support
+- Drop shadows instead of borders
+
+### 8. Contact
+- Minimal contact information
+- Functional contact form with validation
+- Social media links with inverted colors:
+  - LinkedIn (forest green background)
+  - Email (yellow background)
+  - GitHub (dark background)
+  - Instagram (gradient background, replaced Portfolio)
 
 ## 🔧 Technical Features
 

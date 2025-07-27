@@ -6,59 +6,50 @@
     <title>Vincent Michael A. Reconquista - Digital Operations & IT Professional</title>
     <meta name="description" content="Digital Operations Analyst and IT Professional specializing in cybersecurity, quality assurance, and digital marketing.">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav id="navbar" class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="Vincent Reconquista Logo" class="logo-image">
-                <span class="logo-text">Vincent Reconquista</span>
+            <div class="nav-brand">
+                <img src="logo.png" alt="VN Logo" class="nav-logo">
+                <span class="nav-name">Vincent Reconquista</span>
             </div>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#tools" class="nav-link">Tools</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#tools" class="nav-link">Tools</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#design-gallery" class="nav-link">Design</a></li>
+                <li><a href="#portfolio-gallery" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="mobile-menu" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text">
+        <div class="hero-container">
+            <div class="hero-content">
                 <h1 class="hero-title">Digital Operations & IT Professional</h1>
                 <p class="hero-subtitle">Specializing in cybersecurity, quality assurance, and digital marketing with a passion for secure and high-performing systems</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
+            <div class="hero-buttons">
+                <a href="#portfolio-gallery" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="./VincentReconquistaResume.pdf" download class="btn btn-outline">Download CV</a>
+                <a href="https://linkedin.com/in/vjin-michael" target="_blank" class="btn btn-linkedin">LinkedIn</a>
             </div>
-            <div class="hero-image-container">
-                <div class="profile-image-placeholder">
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder zoomable-image" id="hero-photo">
                     <span>Your Photo Here</span>
                 </div>
             </div>
@@ -69,75 +60,85 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="about-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Detail-oriented IT professional transitioning into cybersecurity and quality assurance</p>
-            </div>
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Detail-oriented IT professional transitioning into cybersecurity and quality assurance</p>
+            
             <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder zoomable-image" id="about-photo">
+                        <span>Professional Photo</span>
+                    </div>
+                </div>
                 <div class="about-text">
-                    <div class="about-intro">
-                        <div class="about-image-placeholder">
-                            <span>Professional Photo</span>
-                        </div>
-                        <div class="about-description">
-                            <p>
-                                I'm Vincent Michael A. Reconquista, a detail-oriented IT professional with a strong foundation in digital operations, campaign analysis, and technical support. Currently certified in Email and Digital Marketing, I'm actively transitioning into cybersecurity and quality assurance roles.
-                            </p>
-                            <p>
-                                My expertise spans performance testing, data integrity, and cross-team collaboration to maintain secure and high-performing systems. I bring a unique blend of technical skills and analytical thinking to every project.
-                            </p>
-                        </div>
+                    <p>I'm Vincent Michael A. Reconquista, a detail-oriented IT professional with expertise in digital operations, cybersecurity, and quality assurance. Currently certified in Email and Digital Marketing, I'm actively transitioning into cybersecurity roles.</p>
+                    
+                    <p>My experience spans performance testing, data integrity, and cross-team collaboration to maintain secure and high-performing systems. I bring analytical thinking and technical precision to every project.</p>
+                    
+                    <p>Currently serving as a key member of SGS's departmental engagement committee for 2024-2025, leading initiatives that enhance team collaboration and operational excellence.</p>
+                </div>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3>Digital Operations Analyst</h3>
+                        <h4>SGS Gulf Limited ROHO</h4>
+                        <span class="experience-date">December 2022 - Present</span>
+                        <ul>
+                            <li>Oversee secure management of digital platforms and customer touchpoints</li>
+                            <li>Analyze campaign performance and recommend data-driven optimizations</li>
+                            <li>Lead global website localization projects with focus on quality assurance</li>
+                            <li>Member of departmental engagement committee (2024-2025)</li>
+                        </ul>
                     </div>
-                    <div class="experience-grid">
-                        <div class="experience-item">
-                            <h3>Digital Operations Analyst</h3>
-                            <h4>SGS Gulf Limited ROHQ</h4>
-                            <p class="experience-period">December 2022 - Present</p>
-                            <ul>
-                                <li>Oversee secure management of websites, social platforms, and customer touchpoints</li>
-                                <li>Analyze digital campaign performance to identify anomalies and recommend optimizations</li>
-                                <li>Coordinate with teams to ensure technical consistency and mitigate digital risks</li>
-                                <li>Develop data-driven email workflows compliant with privacy regulations</li>
-                                <li>Lead global website localization projects with focus on quality and clarity</li>
-                            </ul>
-                        </div>
-                        <div class="experience-item">
-                            <h3>Technical Support Engineer</h3>
-                            <h4>JP Morgan Chase & Co.</h4>
-                            <p class="experience-period">January - June 2022</p>
-                            <ul>
-                                <li>Provided troubleshooting for client software/hardware issues</li>
-                                <li>Documented technical issues and improved internal QA processes</li>
-                                <li>Followed strict escalation procedures aligned with company security standards</li>
-                            </ul>
-                        </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3>Technical Support Engineer</h3>
+                        <h4>JP Morgan Chase & Co.</h4>
+                        <span class="experience-date">January - June 2022</span>
+                        <ul>
+                            <li>Provided technical troubleshooting and quality assurance support</li>
+                            <li>Enhanced internal QA processes and documentation standards</li>
+                        </ul>
                     </div>
-                    <div class="education-section">
-                        <h3>Education & Certifications</h3>
-                        <div class="education-item">
-                            <h4>Bachelor of Science in Information Technology</h4>
-                            <p>Cavite State University, Indang Cavite (2017-2022)</p>
-                        </div>
-                        <div class="certifications-grid">
-                            <div class="cert-item">
-                                <span class="cert-badge">🎓</span>
-                                <p>Digital Marketing Certified - HubSpot Academy</p>
-                            </div>
-                            <div class="cert-item">
-                                <span class="cert-badge">📈</span>
-                                <p>Inbound Certified - HubSpot Academy</p>
-                            </div>
-                            <div class="cert-item">
-                                <span class="cert-badge">📱</span>
-                                <p>Social Media Certified - HubSpot Academy</p>
-                            </div>
-                            <div class="cert-item">
-                                <span class="cert-badge">☁️</span>
-                                <p>Aviatrix Certified Engineer (Multicloud Network Associate)</p>
-                            </div>
-                        </div>
+                </div>
+            </div>
+
+            <!-- Education & Certifications -->
+            <div class="education-section">
+                <h3>Education & Professional Certifications</h3>
+                
+                <div class="education-item">
+                    <h4>Bachelor of Science in Information Technology</h4>
+                    <p>Cavite State University, Indang Cavite (2017-2022)</p>
+                    <p class="thesis-info">Thesis: Developed a Baybayin mobile application to preserve and promote Filipino ancient script</p>
+                </div>
+
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">🎓</div>
+                        <h4>Digital Marketing Certified</h4>
+                        <p>HubSpot Academy</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">📈</div>
+                        <h4>Inbound Certified</h4>
+                        <p>HubSpot Academy</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">📱</div>
+                        <h4>Social Media Certified</h4>
+                        <p>HubSpot Academy</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">☁️</div>
+                        <h4>Aviatrix Certified Engineer</h4>
+                        <p>Multicloud Network Associate</p>
                     </div>
                 </div>
             </div>
@@ -145,120 +146,114 @@
     </section>
 
     <!-- Technical Skills Section -->
-    <section id="skills" class="section section-alt">
+    <section id="skills" class="skills-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Comprehensive technical expertise across multiple domains</p>
-            </div>
-            <div class="skills-categories">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Comprehensive technical expertise across multiple domains</p>
+            
+            <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Web Technologies</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">HTML/CSS/JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="90"></div>
-                            </div>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS/JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="90"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Java</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="75"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="75"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">CMS Platforms</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="85"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CMS Platforms</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
                         </div>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3>Digital Marketing & Analytics</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">Google Analytics</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="88"></div>
-                            </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Google Analytics</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">A/B Testing</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="82"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">A/B Testing</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="80"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Conversion Rate Optimization</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="80"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Conversion Rate Optimization</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="75"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Email Platforms</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="90"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Email Platforms</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="90"></div>
                         </div>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3>Cybersecurity & QA</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">Cybersecurity Principles</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="78"></div>
-                            </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Cybersecurity Principles</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="80"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Quality Assurance Testing</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="85"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Quality Assurance Testing</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Data Privacy & Security</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="80"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Data Privacy & Security</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="80"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Access Control</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="75"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Access Control</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="75"></div>
                         </div>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3>Business & Automation</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name">CRM Tools</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="85"></div>
-                            </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CRM Tools</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Automation Systems</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="80"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Automation Systems</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="75"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Web Analytics & Reporting</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="88"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Web Analytics & Reporting</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="85"></div>
                         </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Privacy Protocols</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-skill="82"></div>
-                            </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Privacy Protocols</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-skill="80"></div>
                         </div>
                     </div>
                 </div>
@@ -266,232 +261,284 @@
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section id="tools" class="section">
+    <!-- Tools & Platforms Section -->
+    <section id="tools" class="tools-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tools & Platforms</h2>
-                <p class="section-subtitle">Professional tools and platforms I work with daily</p>
-            </div>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-icon">🌐</div>
-                    <h3>Sitecore</h3>
-                    <p>Content management and digital experience platform for enterprise websites</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🌍</div>
-                    <h3>Lionbridge</h3>
-                    <p>Localization and translation management for global content delivery</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🎨</div>
-                    <h3>Canva</h3>
-                    <p>Graphic design and visual content creation for marketing materials</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🔧</div>
-                    <h3>Figma</h3>
-                    <p>Collaborative design and prototyping for user interface development</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🎭</div>
-                    <h3>Adobe Creative Suite</h3>
-                    <p>Professional design software including Photoshop, Illustrator, and more</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🗣️</div>
-                    <h3>LanguageWire</h3>
-                    <p>Translation management system for multilingual content workflows</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">📊</div>
-                    <h3>Google Analytics</h3>
-                    <p>Web analytics and performance tracking for data-driven insights</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">🔒</div>
-                    <h3>Security Tools</h3>
-                    <p>Various cybersecurity and data protection tools for secure operations</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">📧</div>
-                    <h3>Email Platforms</h3>
-                    <p>HubSpot, Mailchimp, and other email marketing automation tools</p>
-                </div>
-                <div class="tool-card">
-                    <div class="tool-icon">☁️</div>
-                    <h3>Cloud Platforms</h3>
-                    <p>AWS, Azure, and multicloud network management solutions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Projects & Achievements</h2>
-                <p class="section-subtitle">Showcasing my professional work and accomplishments</p>
-            </div>
+            <h2 class="section-title">Tools & Platforms</h2>
+            <p class="section-subtitle">Professional tools and platforms I work with daily</p>
             
-            <!-- Digital Operations Projects -->
-            <div class="project-category">
-                <h3 class="category-title">Digital Operations & Analytics</h3>
-                <div class="gallery" id="gallery-1">
-                    <div class="gallery-item" data-category="digital">
-                        <div class="gallery-image">
-                            <img src="https://via.placeholder.com/400x300/1B4D3E/FFFFFF?text=Website+Security+Management" alt="Website Security Management">
-                        </div>
-                        <div class="gallery-content">
-                            <h4>Website Security Management</h4>
-                            <p>Secure management of websites and customer touchpoints with risk mitigation strategies</p>
+            <div class="tools-grid">
+                <div class="tool-item">
+                    <h3>Sitecore</h3>
+                    <p>Content management and digital experience platform</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Lionbridge</h3>
+                    <p>Localization and translation management</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Canva</h3>
+                    <p>Graphic design and visual content creation</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Figma</h3>
+                    <p>Collaborative design and prototyping</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Adobe Creative Suite</h3>
+                    <p>Professional design software suite</p>
+                </div>
+                <div class="tool-item">
+                    <h3>LanguageWire</h3>
+                    <p>Translation management system</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Google Analytics</h3>
+                    <p>Web analytics and reporting</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Security Tools</h3>
+                    <p>Cybersecurity and monitoring platforms</p>
+                </div>
+                <div class="tool-item">
+                    <h3>Email Platforms</h3>
+                    <p>Email marketing and automation tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects & Achievements Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Projects & Achievements</h2>
+            <p class="section-subtitle">Showcasing my professional work and accomplishments</p>
+            
+            <div class="projects-grid">
+                <div class="project-category">
+                    <h3>Digital Operations & Analytics</h3>
+                    <p>Campaign optimization, data analysis, and digital risk management projects</p>
+                </div>
+                <div class="project-category">
+                    <h3>Technical Solutions & QA</h3>
+                    <p>Quality assurance testing, technical documentation, and process improvements</p>
+                </div>
+                <div class="project-category">
+                    <h3>Professional Development</h3>
+                    <p>Certifications, training programs, and continuous learning initiatives</p>
+                </div>
+                <div class="project-category">
+                    <h3>Baybayin Mobile App</h3>
+                    <p>Thesis project: Mobile application to preserve and promote Filipino ancient script</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Gallery Section -->
+    <section id="design-gallery" class="design-gallery-section">
+        <div class="container">
+            <h2 class="section-title">Graphic Design Portfolio</h2>
+            <p class="section-subtitle">Creative designs and visual content</p>
+            
+            <div class="carousel-container">
+                <div class="carousel" id="design-carousel">
+                    <div class="carousel-item active">
+                        <div class="design-placeholder">
+                            <span>Design Project 1</span>
                         </div>
                     </div>
-                    <div class="gallery-item" data-category="digital">
-                        <div class="gallery-image">
-                            <img src="https://via.placeholder.com/400x300/F4E04D/000000?text=Campaign+Analytics" alt="Digital Campaign Analytics">
-                        </div>
-                        <div class="gallery-content">
-                            <h4>Digital Campaign Analytics</h4>
-                            <p>Performance analysis and optimization recommendations for digital marketing campaigns</p>
+                    <div class="carousel-item">
+                        <div class="design-placeholder">
+                            <span>Design Project 2</span>
                         </div>
                     </div>
-                    <div class="gallery-item" data-category="digital">
-                        <div class="gallery-image">
-                            <img src="https://via.placeholder.com/400x300/1B4D3E/FFFFFF?text=Global+Localization" alt="Global Website Localization">
+                    <div class="carousel-item">
+                        <div class="design-placeholder">
+                            <span>Design Project 3</span>
                         </div>
-                        <div class="gallery-content">
-                            <h4>Global Website Localization</h4>
-                            <p>Leading international website localization projects with quality focus</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="design-placeholder">
+                            <span>Design Project 4</span>
                         </div>
                     </div>
                 </div>
+                <button class="carousel-btn prev" id="design-prev">‹</button>
+                <button class="carousel-btn next" id="design-next">›</button>
+                <div class="carousel-indicators" id="design-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Technical Projects -->
-            <div class="project-category">
-                <h3 class="category-title">Technical Solutions & QA</h3>
-                <div class="gallery" id="gallery-2">
-                    <div class="gallery-item" data-category="technical">
-                        <div class="gallery-image">
-                            <img src="https://via.placeholder.com/400x300/F4E04D/000000?text=Email+Automation" alt="Email Workflow Automation">
-                        </div>
-                        <div class="gallery-content">
-                            <h4>Email Workflow Automation</h4>
-                            <p>Data-driven email workflows compliant with privacy regulations</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item" data-category="technical">
-                        <div class="gallery-image">
-                            <img src="https://via.placeholder.com/400x300/1B4D3E/FFFFFF?text=QA+Process+Improvement" alt="QA Process Improvement">
-                        </div>
-                        <div class="gallery-content">
-                            <h4>QA Process Improvement</h4>
-                            <p>Enhanced internal quality assurance processes and documentation</p>
+    <!-- Portfolio Gallery Section -->
+    <section id="portfolio-gallery" class="portfolio-gallery-section">
+        <div class="container">
+            <h2 class="section-title">Portfolio Gallery</h2>
+            <p class="section-subtitle">Professional work and project showcases</p>
+            
+            <div class="portfolio-carousel-container">
+                <div class="portfolio-carousel" id="portfolio-carousel">
+                    <div class="portfolio-carousel-item active">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 1</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 1</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="gallery-item" data-category="technical">
-                        <div class="gallery-image">
-                            <img src="https://via.placeholder.com/400x300/F4E04D/000000?text=Security+Protocols" alt="Security Protocol Implementation">
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 2</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 2</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
                         </div>
-                        <div class="gallery-content">
-                            <h4>Security Protocol Implementation</h4>
-                            <p>Implementation of security standards and escalation procedures</p>
+                    </div>
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 3</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 3</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 4</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 4</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 5</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 5</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 6</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 6</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 7</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 7</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-carousel-item">
+                        <div class="portfolio-image-container">
+                            <div class="portfolio-placeholder zoomable-portfolio">
+                                <span>Portfolio Project 8</span>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Project Title 8</h3>
+                                <p>Brief description of the project and technologies used</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Certifications Showcase -->
-            <div class="project-category">
-                <h3 class="category-title">Professional Development</h3>
-                <div class="video-gallery">
-                    <div class="video-item">
-                        <div class="video-placeholder">
-                            <div class="play-button">🎓</div>
-                            <p>Certification Journey</p>
-                        </div>
-                        <div class="video-content">
-                            <h4>Professional Certifications</h4>
-                            <p>Journey through HubSpot and Aviatrix certifications in digital marketing and cloud networking</p>
-                        </div>
-                    </div>
+                <button class="portfolio-carousel-btn prev" id="portfolio-prev">‹</button>
+                <button class="portfolio-carousel-btn next" id="portfolio-next">›</button>
+                <div class="portfolio-carousel-indicators" id="portfolio-indicators">
+                    <span class="portfolio-indicator active" data-slide="0"></span>
+                    <span class="portfolio-indicator" data-slide="1"></span>
+                    <span class="portfolio-indicator" data-slide="2"></span>
+                    <span class="portfolio-indicator" data-slide="3"></span>
+                    <span class="portfolio-indicator" data-slide="4"></span>
+                    <span class="portfolio-indicator" data-slide="5"></span>
+                    <span class="portfolio-indicator" data-slide="6"></span>
+                    <span class="portfolio-indicator" data-slide="7"></span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="contact-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's discuss opportunities in cybersecurity, QA, or digital operations</p>
-            </div>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss opportunities in cybersecurity, QA, or digital operations</p>
+            
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>viiin.michael@gmail.com</p>
+                            <h3>Email</h3>
+                            <p>vilin.michael@gmail.com</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">📱</div>
                         <div class="contact-details">
-                            <h4>Phone</h4>
+                            <h3>Phone</h3>
                             <p>+63 991 783 0833</p>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">💼</div>
                         <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <p>linkedin.com/in/viiin-michael</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🎯</div>
-                        <div class="contact-details">
-                            <h4>Availability</h4>
-                            <p>Open for cybersecurity and QA opportunities</p>
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/vilin-michael</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
+
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
+
+            <!-- Social Links -->
             <div class="social-links">
-                <a href="https://linkedin.com/in/viiin-michael" class="social-link" aria-label="LinkedIn" target="_blank">
-                    <span>LinkedIn</span>
-                </a>
-                <a href="mailto:viiin.michael@gmail.com" class="social-link" aria-label="Email">
-                    <span>Email</span>
-                </a>
-                <a href="#" class="social-link" aria-label="GitHub">
-                    <span>GitHub</span>
-                </a>
-                <a href="#" class="social-link" aria-label="Portfolio">
-                    <span>Portfolio</span>
-                </a>
+                <a href="https://linkedin.com/in/vilin-michael" class="social-btn linkedin" target="_blank">LinkedIn</a>
+                <a href="mailto:vilin.michael@gmail.com" class="social-btn email">Email</a>
+                <a href="https://github.com/vincent-reconquista" class="social-btn github" target="_blank">GitHub</a>
+                <a href="https://instagram.com/vincent.reconquista" class="social-btn instagram" target="_blank">Instagram</a>
             </div>
         </div>
     </section>
@@ -499,23 +546,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Vincent Michael A. Reconquista. All rights reserved.</p>
-                <p>Digital Operations Analyst | IT Professional | Cybersecurity Enthusiast</p>
-            </div>
+            <p>&copy; 2024 Vincent Michael A. Reconquista. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Modal for Gallery -->
-    <div id="gallery-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="modal-image" src="" alt="">
-            <div id="modal-info">
-                <h3 id="modal-title"></h3>
-                <p id="modal-description"></p>
-            </div>
-        </div>
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-image" id="modal-image" src="" alt="">
     </div>
 
     <script src="script.js"></script>
