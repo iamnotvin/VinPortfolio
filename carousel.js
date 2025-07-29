@@ -326,7 +326,19 @@ function debugCarousels() {
     console.log('- Next button:', designNext);
     console.log('- Indicators:', designIndicators.length);
     
- 
+    // Portfolio carousel
+    const portfolioCarousel = document.getElementById('portfolio-carousel');
+    const portfolioItems = document.querySelectorAll('.portfolio-carousel-item');
+    const portfolioPrev = document.getElementById('portfolio-prev');
+    const portfolioNext = document.getElementById('portfolio-next');
+    const portfolioIndicators = document.querySelectorAll('.portfolio-indicator');
+    
+    console.log('Portfolio Carousel:');
+    console.log('- Carousel container:', portfolioCarousel);
+    console.log('- Items found:', portfolioItems.length);
+    console.log('- Prev button:', portfolioPrev);
+    console.log('- Next button:', portfolioNext);
+    console.log('- Indicators:', portfolioIndicators.length);
     
     console.log('=== End Debug Info ===');
 }
@@ -337,3 +349,4 @@ setTimeout(debugCarousels, 1000);
 // Export functions for manual testing
 window.debugCarousels = debugCarousels;
 window.initDesignCarousel = initDesignCarousel;
+window.initPortfolioCarousel = initPortfolioCarousel;
