@@ -698,33 +698,22 @@ section {
     display: block;
 }
 
-.design-placeholder {
-    design-placeholder {
+
+    .design-placeholder {
             width: 100%;
             min-width: 1200px;
             height: 600px; /* Increased from 400px to 600px */
             background: var(--white);
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
             color: var(--text-light);
             font-size: 2rem; /* Increased from 1.5rem */
-=======
-        .design-placeholder {
-            width: 100%;
-            min-width: 1200px;
-            min-height: 600px;
-            background: var(--white);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 2rem;
             align-items: stretch;
-    font-weight: 600;
-    border: 3px dashed var(--secondary-color);
-}
+            font-weight: 600;
+            border: 3px dashed var(--secondary-color);
+    }
+
 
 .carousel-btn {
     position: absolute;
