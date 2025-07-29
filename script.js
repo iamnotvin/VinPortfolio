@@ -498,36 +498,6 @@ class EnhancedCarousel {
     }
 }
 
-// Initialize carousel when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize the enhanced carousel
-    const carousel = new EnhancedCarousel('.carousel');
-    
-    // Make carousel globally accessible for debugging
-    window.carousel = carousel;
-    
-    // Add some sample items if none exist
-    const carouselTrack = document.querySelector('.carousel-track');
-    if (carouselTrack && carouselTrack.children.length === 0) {
-        const sampleItems = [
-            '<div class="design-placeholder">Sample Image 1</div>',
-            '<div class="design-placeholder">Sample Image 2</div>',
-            '<div class="design-placeholder">Sample Image 3</div>',
-            '<div class="design-placeholder">Sample Image 4</div>',
-            '<div class="design-placeholder">Sample Image 5</div>'
-        ];
-        
-        sampleItems.forEach(itemHTML => {
-            carousel.addItem(itemHTML);
-        });
-    }
-});
-
-// Export for module use
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = EnhancedCarousel;
-}
-
 
     // Real-time form validation
     const formInputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
