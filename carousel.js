@@ -39,18 +39,33 @@ function autoPlay() {
 
 // Initialize carousel when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Set up auto-play (optional)
-    setInterval(autoPlay, 5000); // Change slide every 5 seconds
+    // Initialize the enhanced carousel
+    const carousel = new EnhancedCarousel('.carousel');
     
-    // Add keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-            changeSlide(-1);
-        } else if (e.key === 'ArrowRight') {
-            changeSlide(1);
-        }
-    });
+    // Make carousel globally accessible for debugging
+    window.carousel = carousel;
+    
+    // Add some sample items if none exist
+    const carouselTrack = document.querySelector('.carousel-track');
+    if (carouselTrack && carouselTrack.children.length === 0) {
+        const sampleItems = [
+            '<div class="design-placeholder">Sample Image 1</div>',
+            '<div class="design-placeholder">Sample Image 2</div>',
+            '<div class="design-placeholder">Sample Image 3</div>',
+            '<div class="design-placeholder">Sample Image 4</div>',
+            '<div class="design-placeholder">Sample Image 5</div>'
+        ];
+        
+        sampleItems.forEach(itemHTML => {
+            carousel.addItem(itemHTML);
+        });
+    }
 });
+
+// Export for module use
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = EnhancedCarousel;
+}
 
 // Touch/swipe support for mobile
 let startX = 0;
