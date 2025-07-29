@@ -55,15 +55,13 @@ function initializeNavigation() {
 
     // Navbar background on scroll
     const navbar = document.getElementById('navbar');
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-    }
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+        } else {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+    });
 
     // Active navigation highlighting
     window.addEventListener('scroll', function() {
@@ -304,12 +302,10 @@ function initializeCarousel() {
 
         // Show current item with animation
         setTimeout(() => {
-            if (items[index]) {
-                items[index].classList.add('active');
-                items[index].style.opacity = '1';
-                items[index].style.transform = 'translateX(0)';
-                items[index].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            }
+            items[index].classList.add('active');
+            items[index].style.opacity = '1';
+            items[index].style.transform = 'translateX(0)';
+            items[index].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         }, 100);
 
         // Activate current indicator
@@ -339,18 +335,6 @@ function initializeCarousel() {
             nextBtn.click();
         }
     });
-}
-
-// Portfolio carousel functionality
-function initPortfolioCarousel() {
-    // Placeholder for portfolio carousel functionality
-    console.log('Portfolio carousel initialized');
-}
-
-// Portfolio zoom functionality
-function initPortfolioZoom() {
-    // Placeholder for portfolio zoom functionality
-    console.log('Portfolio zoom initialized');
 }
 
 // Contact form functionality
@@ -517,11 +501,255 @@ function initializeScrollIndicator() {
         
         // Hide scroll indicator after scrolling
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 200) {
                 scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
             } else {
                 scrollIndicator.style.opacity = '1';
+                scrollIndicator.style.pointerEvents = 'auto';
             }
         });
+   // Portfolio Carousel Functionality
+function initPortfolioCarousel() {
+    const carousel = document.getElementById('portfolio-carousel');
+    const items = carousel.querySelectorAll('.portfolio-carousel-item');
+    const prevBtn = document.getElementById('portfolio-prev');
+    const nextBtn = document.getElementById('portfolio-next');
+    const indicators = document.querySelectorAll('.portfolio-indicator');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        // Hide all items
+        items.forEach(item => item.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Show current item
+        items[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
     }
+
+    function nextSlide() {
+        const next = (currentSlide + 1) % items.length;
+        showSlide(next);
+    }
+
+    function prevSlide() {
+        const prev = (currentSlide - 1 + items.length) % items.length;
+        showSlide(prev);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Indicator clicks
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => showSlide(index));
+    });
+
+    // Auto-slide functionality
+    let autoSlideInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-slide on hover
+    carousel.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
 }
+
+// Portfolio Image Zoom Functionality
+function initPortfolioZoom() {
+    const zoomableImages = document.querySelectorAll('.zoomable-portfolio');
+    
+    zoomableImages.forEach(image => {
+        image.addEventListener('click', () => {
+            showNotification('Portfolio zoom functionality ready! Add your actual images to enable full zoom feature.');
+        });
+    });
+}howNotification(`${title} - Portfolio item clicked! Add your actual portfolio content here.`, 'info');
+        });
+
+        // Add hover effects
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+            this.style.transition = 'all 0.3s ease';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+}
+
+// Initialize portfolio gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializePortfolioGallery);
+
+// Utility functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Performance optimization
+const debouncedScrollHandler = debounce(function() {
+    // Handle scroll events that don't need to run on every scroll
+}, 100);
+
+window.addEventListener('scroll', debouncedScrollHandler);
+
+// Lazy loading for images (when actual images are added)
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Initialize lazy loading
+document.addEventListener('DOMContentLoaded', initializeLazyLoading);
+
+// Accessibility improvements
+document.addEventListener('keydown', function(e) {
+    // Skip to main content with Tab key
+    if (e.key === 'Tab' && !e.shiftKey && document.activeElement === document.body) {
+        const mainContent = document.querySelector('main') || document.querySelector('#home');
+        if (mainContent) {
+            mainContent.focus();
+            e.preventDefault();
+        }
+    }
+});
+
+// Reduced motion support
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (prefersReducedMotion.matches) {
+    // Disable animations for users who prefer reduced motion
+    document.documentElement.style.setProperty('--transition-fast', '0s');
+    document.documentElement.style.setProperty('--transition-medium', '0s');
+    document.documentElement.style.setProperty('--transition-slow', '0s');
+}
+
+// Print styles optimization
+window.addEventListener('beforeprint', function() {
+    // Optimize for printing
+    document.body.classList.add('printing');
+});
+
+window.addEventListener('afterprint', function() {
+    document.body.classList.remove('printing');
+});
+
+// Error handling
+window.addEventListener('error', function(e) {
+    console.error('JavaScript error:', e.error);
+    // Could send error reports to analytics service
+});
+
+// Service Worker registration (for PWA capabilities)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        // Uncomment when you have a service worker file
+        // navigator.serviceWorker.register('/sw.js')
+        //     .then(registration => console.log('SW registered'))
+        //     .catch(error => console.log('SW registration failed'));
+    });
+}
+
+// Add smooth reveal animations for sections
+function initializeSectionAnimations() {
+    const sections = document.querySelectorAll('section');
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(50px)';
+        section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        sectionObserver.observe(section);
+    });
+}
+
+// Initialize section animations
+document.addEventListener('DOMContentLoaded', initializeSectionAnimations);
+
+// Add interactive hover effects for tool items
+function initializeToolInteractions() {
+    const toolItems = document.querySelectorAll('.tool-item');
+    
+    toolItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px) scale(1.02)';
+            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+        });
+
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+// Initialize tool interactions
+document.addEventListener('DOMContentLoaded', initializeToolInteractions);
+
+// Add click-to-copy functionality for contact information
+function initializeContactCopy() {
+    const contactDetails = document.querySelectorAll('.contact-details p');
+    
+    contactDetails.forEach(detail => {
+        detail.style.cursor = 'pointer';
+        detail.title = 'Click to copy';
+        
+        detail.addEventListener('click', function() {
+            const text = this.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                showNotification(`Copied: ${text}`, 'success');
+            }).catch(() => {
+                showNotification('Failed to copy to clipboard', 'error');
+            });
+        });
+    });
+}
+
+// Initialize contact copy functionality
+document.addEventListener('DOMContentLoaded', initializeContactCopy);
+
