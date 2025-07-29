@@ -798,7 +798,7 @@ section {
 
 .design-placeholder {
     width: 100%;
-    height: 400px;
+    height: 900px;
     background: var(--white);
     display: flex;
     align-items: center;
@@ -1252,7 +1252,7 @@ section {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .container {
         padding: 0 1rem;
     }
