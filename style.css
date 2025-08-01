@@ -326,8 +326,8 @@ p {
 
 /* Image Placeholders */
 .image-placeholder {
-    width: 400px;
-    height: 400px;
+    width: 40px;
+    height: 120px;
     border-radius: 50%;
     display: flex;
     align-items: center;
