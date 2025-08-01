@@ -419,8 +419,8 @@ section {
 }
 
 .about-image .image-placeholder {
-    width: 250px;
-    height: 300px;
+    width: 20px;
+    height: 60px;
     border-radius: var(--border-radius-large);
     background: var(--white);
     color: var(--text-light);
