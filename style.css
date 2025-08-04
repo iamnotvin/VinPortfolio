@@ -701,7 +701,7 @@ section {
 
 .design-placeholder {
     width: 100%;
-    height: 1200px;
+    height: 800px;
     background: var(--white);
     display: flex;
     align-items: stretch;
@@ -765,7 +765,7 @@ section {
 /* Portfolio Gallery Section */
 .portfolio-carousel-container {
     position: relative;
-    max-width: 500px;
+    max-width: 350px;
     margin: 0 auto;
 }
 
@@ -792,14 +792,14 @@ section {
 
 .carousel-image {
     width: 100%;
-    height: 1200px;
+    height: 800px;
     object-fit: cover;
     border-radius: var(--border-radius-large);
 }
 
 .design-placeholder {
     width: 100%;
-    height: 1200px;
+    height: 800px;
     background: var(--white);
     display: flex;
     align-items: center;
