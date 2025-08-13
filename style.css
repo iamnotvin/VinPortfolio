@@ -792,7 +792,7 @@ section {
 
 .carousel-image {
     width: 100%;
-    height: 800px;
+    height: 1200px;
     object-fit: cover;
     border-radius: var(--border-radius-large);
 }
