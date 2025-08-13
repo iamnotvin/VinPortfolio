@@ -701,7 +701,7 @@ section {
 
 .design-placeholder {
     width: 100%;
-    height: 800px;
+    height: 1200px;
     background: var(--white);
     display: flex;
     align-items: stretch;
@@ -799,7 +799,7 @@ section {
 
 .design-placeholder {
     width: 100%;
-    height: 800px;
+    height: 1200px;
     background: var(--white);
     display: flex;
     align-items: center;
